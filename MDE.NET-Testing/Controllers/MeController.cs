@@ -1,16 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
+﻿using MDE.NET_Testing.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 using System.Web;
 using System.Web.Http;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
-using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin.Security;
-using Owin;
-using MDE.NET_Testing.Models;
 
 namespace MDE.NET_Testing.Controllers
 {
@@ -43,8 +35,15 @@ namespace MDE.NET_Testing.Controllers
         // GET api/Me
         public GetViewModel Get()
         {
-            var user = UserManager.FindById(User.Identity.GetUserId());
-            return new GetViewModel() { Hometown = user.Hometown };
+            //var user = UserManager.FindById(User.Identity.GetUserId());
+            //return new GetViewModel() { Hometown = user.Hometown };
+            var GVM = new GetViewModel();
+            if (User.Identity.IsAuthenticated)
+            {
+                var user = UserManager.FindById(User.Identity.GetUserId());
+                GVM.Hometown = user.Hometown;
+            }
+            return GVM;
         }
     }
 }
