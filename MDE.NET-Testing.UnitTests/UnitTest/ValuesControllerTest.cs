@@ -43,7 +43,6 @@ namespace MDE.NET_Testing.UnitTests.UnitTest
         {
             // Arrange
             ValuesController controller = new ValuesController();
-            int Id = 3;
             string value = "value3";
 
             // Act

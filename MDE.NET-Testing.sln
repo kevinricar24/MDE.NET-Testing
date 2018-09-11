@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDE.NET-Testing", "MDE.NET-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDE.NET-Testing.UnitTests", "MDE.NET-Testing.UnitTests\MDE.NET-Testing.UnitTests.csproj", "{DD28D83D-4474-441B-84D4-CCBF8F3E51A3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDE.NET-Testing.AutomationTests", "MDE.NET-Testing.AutomationTests\MDE.NET-Testing.AutomationTests.csproj", "{ABAED8C3-D93A-4456-A5B1-5F75270C8108}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{DD28D83D-4474-441B-84D4-CCBF8F3E51A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD28D83D-4474-441B-84D4-CCBF8F3E51A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD28D83D-4474-441B-84D4-CCBF8F3E51A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABAED8C3-D93A-4456-A5B1-5F75270C8108}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABAED8C3-D93A-4456-A5B1-5F75270C8108}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABAED8C3-D93A-4456-A5B1-5F75270C8108}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABAED8C3-D93A-4456-A5B1-5F75270C8108}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
