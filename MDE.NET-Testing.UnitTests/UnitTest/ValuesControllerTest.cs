@@ -15,13 +15,13 @@ namespace MDE.NET_Testing.UnitTests.UnitTest
             ValuesController controller = new ValuesController();
 
             // Act
-            IEnumerable<string> result = controller.Get();
+            Dictionary<int, string> result = controller.Get();
 
             // Assert
             Assert.IsNotNull(result);
-            Assert.AreEqual(2, result.Count());
-            Assert.AreEqual("value1", result.ElementAt(0));
-            Assert.AreEqual("value2", result.ElementAt(1));
+            Assert.AreEqual(3, result.Count());
+            Assert.AreEqual("value0", result.ElementAt(0).Value);
+            Assert.AreEqual("value1", result.ElementAt(1).Value);
         }
 
         [TestMethod]
@@ -29,12 +29,13 @@ namespace MDE.NET_Testing.UnitTests.UnitTest
         {
             // Arrange
             ValuesController controller = new ValuesController();
+            int Id = 2;
 
             // Act
-            string result = controller.Get(5);
+            string result = controller.Get(Id);
 
             // Assert
-            Assert.AreEqual("value", result);
+            Assert.AreEqual("value2", result);
         }
 
         [TestMethod]
@@ -42,11 +43,14 @@ namespace MDE.NET_Testing.UnitTests.UnitTest
         {
             // Arrange
             ValuesController controller = new ValuesController();
+            int Id = 3;
+            string value = "value3";
 
             // Act
-            controller.Post("value");
+            string result = controller.Post(value);
 
             // Assert
+            Assert.AreEqual(value + " added!", result);
         }
 
         [TestMethod]
@@ -54,11 +58,14 @@ namespace MDE.NET_Testing.UnitTests.UnitTest
         {
             // Arrange
             ValuesController controller = new ValuesController();
+            int Id = 3;
+            string value = "new value3";
 
             // Act
-            controller.Put(5, "value");
+            string result = controller.Put(Id, value);
 
             // Assert
+            Assert.AreEqual(value + " updated!", result);
         }
 
         [TestMethod]
@@ -66,11 +73,13 @@ namespace MDE.NET_Testing.UnitTests.UnitTest
         {
             // Arrange
             ValuesController controller = new ValuesController();
+            int Id = 2;
 
             // Act
-            controller.Delete(5);
+            string result = controller.Delete(Id);
 
             // Assert
+            Assert.AreEqual(Id + " removed!", result);
         }
     }
 }
